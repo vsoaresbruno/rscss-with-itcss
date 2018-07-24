@@ -1,0 +1,27 @@
+.scrollbar {
+    ::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        .borderRadius(10px, 10px, 10px, 10px);
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    ::-webkit-scrollbar-thumb:window-inactive {
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    scrollbar-base-color: @grey;
+    scrollbar-3dlight-color: @grey;
+    scrollbar-highlight-color: @grey;
+    scrollbar-track-color: @lightGrey;
+    scrollbar-arrow-color: @lightGrey;
+    scrollbar-shadow-color: @lightGrey;
+    scrollbar-dark-shadow-color: @lightGrey;
+}
+

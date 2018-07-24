@@ -1,0 +1,43 @@
+.tag {
+    display: inline-block;
+    text-transform: uppercase;
+    .borderRadius(2px,2px,2px,2px);
+    font-family: "Roboto Medium";
+
+
+    /* Tamnhos */
+    &.-small {
+        font-size: 0.6em;
+        padding: 3px 8px;
+    }
+
+    &.-medium {
+        font-size: 0.8em;
+        padding: 4px 8px;
+    }
+
+    /* Cores */
+    &.-green {
+        .tagStyle(#fff, @defaultGreenLink, 0);
+    }
+
+    &.-gray {
+        .tagStyle(#fff, @defaultText, 0);
+    }
+
+    &.-yellow {
+        .tagStyle(#fff, #d58512, 0);
+    }
+
+    &.-blue {
+        .tagStyle(#fff, @lightBlue, 0);
+    }
+
+    &.-black {
+        .tagStyle(#fff, #000, 0);
+    }
+
+    &.-red {
+        .tagStyle(#fff, @defaultRed, 0);
+    }
+}

@@ -1,0 +1,190 @@
+.btn {
+    display: inline-block;
+    position: relative;
+    outline: none;
+    border-width: 1px;
+    border-style: solid;
+    cursor: pointer;
+    padding: 11px 32px;
+    overflow: hidden;
+    vertical-align: middle;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.3em;
+    letter-spacing: 1.25px;
+    color: #fff;
+    font-family: "Roboto Medium" !important;
+    will-change: transform, opacity;
+
+    .borderRadius(35px, 35px, 35px, 35px);
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &:after {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        left: 0;
+        transition: all .45s;
+        opacity: 0;
+        margin: auto;
+        background: rgba(255, 255, 255, 0.3);
+        width: 120%;
+        height: 300%;
+        content: "";
+        .borderRadius(35px, 35px, 35px, 35px);
+        .translate(0, -50%);
+    }
+
+    &:active {
+
+        &:after {
+            transition: 0s;
+            opacity: 1;
+            width: 0;
+            height: 0;
+            .borderRadius(35px, 35px, 35px, 35px);
+        }
+    }
+
+    &.-disabled {
+        border-color: rgba(8, 75 , 96, 0.1) !important;
+        background-color: rgba(8,75,96, 0.5);
+        cursor: default !important;
+        color: #fff !important;
+
+    }
+
+    &.-blue {
+        border-color: @defaultBlue;
+        background: @defaultBlue;
+
+        &:hover,
+        &:focus {
+            border-color: #0a617c;
+            background: #0a617c;
+        }
+
+        &:active {
+            border-color: @defaultBlue;
+            background: @defaultBlue;
+        }
+
+    }
+
+    &.-light {
+        border-color: @lightBlue;
+        background: @lightBlue;
+
+        &:hover,
+        &:focus {
+            border-color: @lightBlueActive;
+            background: @lightBlueActive;
+        }
+
+        &:active {
+            border-color: @lightBlue;
+            background: @lightBlue;
+        }
+
+        &.disabled {
+            background: rgba(42, 136, 196, 0.6, 60);
+            cursor: default;
+        }
+    }
+
+    &.-green {
+        border-color: @buttonGreen;
+        background: @buttonGreen;
+
+        &:hover,
+        &:focus {
+            border-color: @defaultGreen;
+            background: @defaultGreen;
+        }
+
+        &:active {
+            border-color: @buttonGreen;
+            background: @buttonGreen;
+        }
+
+    }
+
+    &.fb,
+    &.-fb {
+        border-color: @fb;
+        background: @fb;
+
+        &:hover,
+        &:focus {
+            border-color: @fbHover;
+            background: @fbHover;
+        }
+
+        &:active {
+            border-color: @fb;
+            background: @fb;
+        }
+    }
+}
+
+.btn-outline {
+    border-width: 1px;
+    border-style: solid;
+    background: transparent;
+    &:extend(.btn);
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &.-large {
+        font-size: 1.6em;
+    }
+
+    &.-blue {
+        border-color: @defaultBlue;
+        color: @defaultBlue;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background: rgba(8, 75, 96, 0.1);
+        }
+    }
+
+    &.-light {
+        border-color: @lightBlue;
+        color: @lightBlue;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background: rgba(8, 75, 96, 0.1);
+        }
+    }
+
+    &.-white {
+        border-color: #FFF;
+        color: #FFF;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    }
+
+    &.-disabled {
+        border-color: @silver !important;
+        cursor: default !important;
+        color: @silver !important;
+
+        &:hover {
+            background: transparent !important;
+        }
+    }
+}

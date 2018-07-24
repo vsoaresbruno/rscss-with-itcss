@@ -1,0 +1,20 @@
+/* sobrescreve estilo do switch material.less */
+
+.mdl-switch__label {
+    font-size: 100% !important;
+    line-height: 1.4em !important;
+}
+
+.-lightBlue {
+
+    &.is-checked {
+
+        .mdl-switch__thumb {
+            background: @lightBlue !important;
+        }
+
+        .mdl-switch__track {
+            background: rgba(42, 136, 196, 0.5) !important;
+        }
+    }
+}

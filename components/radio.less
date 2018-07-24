@@ -1,0 +1,43 @@
+
+/* -----------------------------------------------------------------------------
+
+  RADIO COMPONENT
+
+----------------------------------------------------------------------------- */
+
+/**
+ * Radio Form
+ */
+
+input[type="radio"] {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+
+    &:checked + span {
+
+        &:before {
+            background: @lightBlue;
+            .shadow(0, 0, 0, 1px, @lightBlue);
+        }
+    }
+}
+input[type="radio"] + span {
+
+    &:before {
+        border: 2px solid #F9F9F9;
+        content: '';
+        display: inline-block;
+        height: 14px;
+        margin: 0 10px 0 0;
+        vertical-align: middle;
+        width: 14px;
+        .borderRadius(50%, 50%, 50%, 50%);
+        .shadow(0, 0, 0, 1px, @defaultText);
+    }
+}

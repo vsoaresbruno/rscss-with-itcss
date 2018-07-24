@@ -1,0 +1,63 @@
+
+/* -----------------------------------------------------------------------------
+
+  PAGINATION COMPONENT
+
+----------------------------------------------------------------------------- */
+
+.pagination {
+    text-align: center;
+
+    ul {
+        display: inline-block;
+        .group;
+
+        li {
+            float: left;
+
+            &.page {
+                margin: 0 5px;
+
+                > a,
+                > span {
+                    display: block;
+                    width: 38px;
+                    height: 38px;
+                    padding: 12px 0;
+                    text-align: center;
+                    .borderRadius(50%, 50%, 50%, 50%);
+                }
+
+                > span {
+                    background: @lightBlue;
+                    color: #fff;
+                    &:extend(.boldFont);
+                }
+
+                > a {
+                    background: @silver;
+                    color: @defaultText;
+
+                    &:hover {
+                        background: @grey;
+                        text-decoration: none;
+                    }
+
+                    &.previous,
+                    &.next {
+                        padding: 4px 0 !important;
+
+                        .icon {
+                            font-size: 2em;
+                        }
+                    }
+                }
+            }
+
+            &.ellipsis {
+                padding: 10px 5px;
+                &:extend(.boldFont);
+            }
+        }
+    }
+}

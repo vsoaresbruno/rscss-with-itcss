@@ -1,0 +1,45 @@
+.tostie-toast {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10000;
+
+    div {
+        font-size: 1.1em;
+        text-align: center;
+
+        .toast-close {
+            display: block;
+            color: #fff;
+            width: 100%;
+            height: 100%;
+            padding: 15px 0 20px 0;
+            text-decoration: none;
+        }
+
+        .iconBrand {
+            &:before {
+                font-size: 1.4em;
+                margin: 0 10px 0 0;
+                vertical-align: -3px;
+            }
+        }
+    }
+
+    .success {
+        background: #16a085;
+    }
+
+    .notice {
+        background: #52B3D9;
+    }
+
+    .warning {
+        background: #F5D76E;
+    }
+
+    .error {
+        background: #D64541;
+    }
+}

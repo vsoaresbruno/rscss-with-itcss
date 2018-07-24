@@ -1,0 +1,21 @@
+/* -----------------------------------------------------------------------------
+
+  MODAL COMPONENT
+
+----------------------------------------------------------------------------- */
+
+.defaultModal {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: @defaultCard;
+    padding: 30px;
+    position: relative;
+
+    .title {
+        text-transform: uppercase;
+        font-size: 1.1em;
+        margin: 0 0 20px 0;
+        &:extend(.boldFont);
+        &:extend(.block);
+    }
+}

@@ -1,0 +1,58 @@
+.cardBox {
+    height: 100%;
+    padding: 30px;
+    background: @defaultCard;
+    .borderRadius(3px, 3px, 3px, 3px);
+    .shadow(0, 2px, 2px, 0, rgba(0,0,0,.14));
+
+    > .title {
+        font-size: 1.2em;
+        border-bottom: 1px solid @grey;
+        margin: 0 0 15px;
+        padding: 0 0 15px;
+        line-height: 1.3em;
+    }
+
+    .header {
+        border-bottom: 1px solid @grey;
+            margin: 0 0 15px;
+            padding: 0 0 15px;
+
+        > .title {
+            font-size: 1.2em;
+            margin: 0 0 10px;
+            line-height: 1.3em;
+        }
+
+        > .description {
+            line-height: 1.3em;
+        }
+    }
+
+    .listItem {
+        background-color: #FFF;
+        margin: 20px 0;
+        padding: 20px;
+        .borderRadius(3px, 3px, 3px, 3px);
+    }
+
+    .footerLink {
+        margin: 25px 0 0;
+        color: @blueLink;
+        display: inline-block;
+        &:extend(.boldFont);
+
+        .icon {
+            font-size: 1.4em;
+            margin: 0 5px 0 0;
+            vertical-align: middle;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .cardBox {
+        padding: 20px;
+    }
+}

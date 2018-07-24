@@ -1,0 +1,63 @@
+.headerAlert {
+    display: block;
+    z-index: 1000;
+    line-height: 1.3em;
+    font-size: 1.1em;
+    &:extend(.relative);
+
+    &.info {
+        background: #00adb5;
+    }
+
+    &.BrandNoEnem {
+        background: @his;
+    }
+
+    &.simulado {
+        background: #00ADB5;
+    }
+
+    &.blackFriday {
+        background: #0a0a0a;
+        .opacity(0.9, 90) !important;
+
+        .link {
+            color: @gold;
+        }
+    }
+
+    .link,
+    .text {
+        display: block;
+        padding: 12px 0;
+        color: #fff;
+        font-size: 1.1em;
+        &:extend(.textCenter);
+        &:extend(.boldFont);
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        strong {
+            padding: 0 3px;
+            .borderRadius(2px, 2px, 2px, 2px);
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .headerAlert {
+
+        .link,
+        .text {
+            padding: 15px;
+            font-size: 1em;
+        }
+    }
+
+    .indexHeader {
+        position: relative;
+    }
+}

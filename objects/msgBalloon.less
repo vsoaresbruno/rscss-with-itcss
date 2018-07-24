@@ -1,0 +1,53 @@
+.msgBalloon {
+    padding: 15px 30px 15px 15px;
+    margin: 20px 0;
+    line-height: 1.3em;
+    font-size: 0.9em;
+    &:extend(.relative);
+
+    .title {
+        display:block;
+        &:extend(.boldFont);
+    }
+
+    .description {
+        margin: 5px 0 0;
+        display: none;
+        &:extend(.pgraph);
+    }
+
+
+    &.-attention {
+        background-color: @yellowLighter;
+        color: @yellowDarker;
+
+        &:after{
+            content: '';
+            margin: 0 auto;
+            width: 0px;
+            height: 0px;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 15px solid #fefbe1;
+            bottom: -14px;
+            &:extend(.absolute);
+        }
+    }
+
+    &.-info {
+        background: #cbe5f6;
+        color: @blueDarker;
+
+        &:after{
+            content: '';
+            margin: 0 auto;
+            width: 0px;
+            height: 0px;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 15px solid #cbe5f6;
+            bottom: -14px;
+            &:extend(.absolute);
+        }
+    }
+}

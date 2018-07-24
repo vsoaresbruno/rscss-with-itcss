@@ -1,0 +1,296 @@
+/* -----------------------------------------------------------------------------
+
+  CALENDAR COMPONENT
+
+----------------------------------------------------------------------------- */
+
+/**
+ * ESPECIFIC COLORS
+ */
+
+@color_1: #434343;
+@color_2: #333;
+@color_3: #bdbdbd;
+@color_4: #c55;
+@color_5: #434343;
+@color_6: #96D4FD;
+@color_7: #0d7fcc;
+@color_8: #7EE699;
+@color_9: #0DCC3F;
+@color_10: #999;
+
+.dncalendar-inactive {
+    opacity: 0.2;
+}
+
+.dncalendar-header {
+    margin: 20px 0 15px;
+    position: relative;
+
+    h2 {
+        color: @defaultText;
+        font-family: 'Roboto Bold';
+        font-size: 13px;
+    }
+
+    .dncalendar-links {
+        height: 19px;
+        width: 100%;
+        position: absolute;
+        top: -5px;
+        div {
+            cursor: pointer;
+            width: 35px;
+            height: 35px;
+            -webkit-user-select: none;
+            touch-action: pan-y;
+            -webkit-user-drag: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        .dncalendar-next-month,
+        .dncalendar-prev-month {
+            transition: background-color 100ms linear;
+            border-radius: 50%;
+            padding: 1px 0;
+            width: 25px;
+            height: 25px;
+            text-align: center;
+            font-size: 18px;
+            &:extend(.boldFont);
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.09);
+            }
+
+            .material-icons {
+                font-size: 22px;
+            }
+        }
+
+        .dncalendar-next-month {
+            position: absolute;
+            right: 5px;
+        }
+
+        .dncalendar-prev-month {
+            position: absolute;
+            right: 50px;
+        }
+    }
+}
+.dncalendar-body {
+    margin: 0 0 10px;
+    table {
+        width: 100%;
+        text-align: center;
+        border-collapse: collapse;
+        font-size: 15px;
+        th {
+            display: table-cell;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        td {
+
+            &.holiday {
+                color: @color_3 !important;
+            }
+
+            &.calendarClick{
+
+                &.holiday {
+                    color: @color_5 !important;
+                }
+            }
+
+            &.default-date {
+                background-color: rgba(66, 133, 244, .5);
+                color: #FFF !important;
+
+                &.active {
+                    background-color: #4285f4;;
+                }
+            }
+        }
+
+        td.calendarClick.default-date {
+
+            background: #4285f4;
+            color: #FFF!important;
+
+            &:hover {
+                background: #4285f4 !important;
+                color: #FFF !important;
+            }
+        }
+
+        td.today-date {
+            background: #4285f4;
+            color: #fff !important;
+        }
+
+        td.calendarClick.today-date {
+            background: #4285f4;
+            color: #fff !important;
+
+            &:hover {
+                background: #4285f4 !important;
+            }
+        }
+
+        td.note {
+            position: relative;
+
+            &:before {
+                content: "";
+                position: absolute;
+                border: none;
+                border-radius: 50%;
+                top: inherit;
+                bottom: 50%;
+                left: 50%;
+                display: block;
+                margin-bottom: -15px;
+                background: #cbcbcb;
+                margin-left: -4px;
+                padding: 2.5px;
+            }
+        }
+
+        td.calendarClick.note {
+            position: relative;
+
+            &:before {
+                content: "";
+                position: absolute;
+                border: none;
+                border-radius: 50%;
+                top: inherit;
+                bottom: 50%;
+                left: 50%;
+                display: block;
+                margin-bottom: -15px;
+                background: #cbcbcb;
+                margin-left: -4px;
+                padding: 2.5px;
+            }
+        }
+    }
+
+    thead {
+
+        td {
+            color: @color_2;
+            font-size: 11px;
+            text-transform: uppercase;
+            padding: 10px 0;
+            &:extend(.bolderFont);
+
+            &.holiday {
+                color: @color_2 !important;
+            }
+        }
+    }
+
+    tbody {
+
+        tr {
+
+            td {
+                width: 13%;
+                vertical-align: middle;
+                text-decoration: none;
+                color: @color_3;
+                font-size: 12px;
+            }
+        }
+
+        td#calendarClick {
+            transition: background-color 100ms linear;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        td.calendarClick {
+            color: @color_1;
+            background: #fff;
+            border-radius: 50%;
+
+            &:hover {
+                background: #e8e8e8;
+            }
+
+            &:active {
+                background: #ddd;
+            }
+
+            &.active {
+                background: #e8e8e8;
+                color: #333 !important;
+                font-family: 'Roboto Bold';
+
+                &:hover {
+                    color: #FFF !important;
+                }
+            }
+        }
+
+        td {
+
+            .entry {
+                padding: 11px 0 13px;
+                &:extend(.relative);
+
+                &:after {
+                    content: attr(data-title);
+                    left: 0;
+                    position: absolute;
+                    font-size: 10px;
+                    bottom: 1px;
+                    text-align: center;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+td {
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.dncalendar-note-list {
+    margin: 25px 0;
+    margin-left: 4.5%;
+    padding: 0;
+    list-style: none;
+    color: @color_10;
+
+    .date {
+        margin: 5px 0;
+        color: #333;
+        &:extend(.boldFont);
+
+        &:before {
+            display: inline-block;
+            margin-right: 7px;
+            margin-left: 3px;
+            border-radius: 50%;
+            background: #cbcbcb;
+            padding: 2.5px;
+            vertical-align: middle;
+            content: '';
+        }
+    }
+}

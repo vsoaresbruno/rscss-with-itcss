@@ -1,0 +1,83 @@
+/* -----------------------------------------------------------------------------
+
+  TABS COMPONENT
+  
+----------------------------------------------------------------------------- */
+
+/**
+ * Tabs navigation
+ */
+
+.tabsNav {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    .link {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        border-bottom: 1px solid @silver;
+        background-color: #FFF;
+        padding: 12px;
+        text-decoration: none;
+        color: #084b60;
+        &:extend(.textCenter);
+        &:extend(.uppercase);
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover {
+            background-color: #F0F0F0;
+        }
+
+        &.is-active {
+            border-bottom: 5px solid @darkBlue;
+            color: #084b60;
+        }
+
+        .tabTitle {
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+        }
+    }
+}
+
+/**
+ * Tab
+ */
+.tab {
+    display: none;
+
+    &.is-active {
+        display: block;
+    }
+
+    .tabContent {
+        padding: 0;
+    }
+}
+
+/**
+ * Tabs no-js fallback
+ */
+.c-tabs.no-js .c-tabs-nav {
+    display: none;
+}
+
+.c-tabs.no-js .c-tab {
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.c-tabs.no-js .c-tab:last-child {
+    margin-bottom: 0;
+}

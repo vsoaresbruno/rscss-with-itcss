@@ -1,0 +1,79 @@
+// Helper for the grid align top
+.make-row-helpers(@breakpoint) {
+  .row--@{breakpoint}-top {
+    align-items: flex-start;
+  }
+  .row--@{breakpoint}-center {
+    align-items: center;
+  }
+  .row--@{breakpoint}-bottom {
+    align-items: flex-end;
+  }
+}
+
+// Helper for the sorting the first item
+.make-col-helpers(@breakpoint) {
+  .col--@{breakpoint}-align-top {
+    align-self: flex-start;
+  }
+  .col--@{breakpoint}-align-center {
+    align-self: center;
+  }
+  .col--@{breakpoint}-align-bottom {
+    align-self: flex-end;
+  }
+
+  .col--@{breakpoint}-first {
+    order: -1;
+  }
+  .col--@{breakpoint}-last {
+    order: 1;
+  }
+  .col--@{breakpoint}-reset {
+    order: 0;
+  }
+  .row--@{breakpoint}-reverse {
+    flex-direction: row-reverse;
+  }
+  .col--@{breakpoint}-flex {
+    display: flex;
+  }
+}
+
+.make-text-helpers(@breakpoint) {
+  .text--@{breakpoint}-right {
+    text-align: right;
+  }
+  .text--@{breakpoint}-left {
+    text-align: left;
+  }
+  .text--@{breakpoint}-center {
+    text-align: center;
+  }
+}
+
+.make-justify-helpers(@breakpoint) {
+  .justify--@{breakpoint}-end {
+    justify-content: flex-end;
+  }
+  .justify--@{breakpoint}-start {
+    justify-content: flex-start;
+  }
+  .justify--@{breakpoint}-center {
+    justify-content: center;
+  }
+  .justify--@{breakpoint}-between {
+    justify-content: space-between;
+  }
+  .justify--@{breakpoint}-around {
+    justify-content: space-around;
+  }
+}
+
+
+.make-helpers(@breakpoint) {
+  .make-row-helpers(@breakpoint);
+  .make-col-helpers(@breakpoint);
+  .make-text-helpers(@breakpoint);
+  .make-justify-helpers(@breakpoint);
+}

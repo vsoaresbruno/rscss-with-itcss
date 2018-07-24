@@ -1,0 +1,641 @@
+/* -----------------------------------------------------------------------------
+
+  BOX PLANS
+
+----------------------------------------------------------------------------- */
+
+.boxPlans {
+    border-top: 1px solid @grey;
+    border-bottom: 1px solid @grey;
+    background: #f7faff;
+    padding: 30px 20px;
+
+    .invalidPromoCode {
+        margin: 0 auto 40px auto;
+        max-width: 1024px;
+    }
+
+    .title {
+        margin: 0 0 25px 0;
+        line-height: 1.3em;
+        letter-spacing: -1px;
+        color: @defaultBlue;
+        font-size: 2.5em;
+        &:extend(.bolderFont);
+    }
+
+    .plansWrapper {
+        margin: 40px auto 0;
+        &:extend(.textCenter);
+
+
+        .plansCarousel {
+            display: flex;
+            flex-direction: column;
+            max-width: 1000px;
+
+            .owl-stage-outer {
+                overflow: inherit;
+            }
+
+            .owl-stage {
+                display: flex;
+            }
+
+            .owl-item {
+                transform: scale(.9);
+                transition: .6s ease all;
+
+                .itemCarousel {
+                    margin: 20px auto;
+                    max-width: 360px;
+                }
+
+                &.active {
+                    .opacity(1, 100)!important;
+                    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+                    transform: scale(1);
+
+                    .plan, .btn {
+                        .opacity(1, 100)!important;
+                    }
+                }
+            }
+
+            .owl-controls {
+
+                .owl-nav {
+                    top: 50%;
+                    width: 100%;
+                    &:extend(.absolute);
+
+                    .owl-prev,
+                    .owl-next {
+                        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08), inset 0 0 0 0 rgba(0,0,0,0.10), inset 0 0 0 0 rgba(255,255,255,0.50);
+                        width: 50px;
+                        height: 50px;
+                        &:extend(.absolute);
+
+                        &.disabled {
+                            opacity: 0;
+                        }
+
+                        &:hover {
+                            box-shadow: 1px 20px 32px 0 rgba(0, 0, 0, 0.3);
+                        }
+
+                        &.owl-prev {
+                            left: 20px;
+                            border-radius: 50%;
+                            background: #fff;
+
+                            .icon{
+                                animation-duration: .6s;
+                                animation-name: slideout;
+                                animation-iteration-count: infinite;
+                                animation-direction: alternate;
+                            }
+                        }
+
+                        &.owl-next {
+                            right: 20px;
+                            border-radius: 50%;
+                            background: #fff;
+
+                            .icon {
+                                animation-duration: .6s;
+                                animation-name: slidein;
+                                animation-iteration-count: infinite;
+                                animation-direction: alternate;
+                            }
+                        }
+
+                        .icon {
+                            font-size: 50px;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    .plan {
+        border: 1px solid #eee;
+        background: #fff;
+        padding: 35px 0;
+        .borderRadius(5px, 5px, 5px, 5px,);
+        .shadow(0,2px, 8px,0, rgba(59,89,178,.15));
+
+        &:hover {
+            transform: translateY(-2px);
+            -webkit-box-shadow: 1px 20px 32px 0 rgba(0, 0, 0, 0.3);
+            transition-timing-function: ease-out;
+            transition-duration: .2s;
+            .shadow(1px,8px, 30px, 0, @color: rgba(0, 0, 0, 0.3));
+            .opacity(1, 100)!important;
+        }
+
+        > a {
+            &:extend(.block);
+            &:extend(.relative);
+
+            &:hover {
+                text-decoration: none;
+
+                .planHeader {
+                    .opacity(1, 100)
+                }
+            }
+        }
+
+        .discount {
+            top: -48px;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            background: @qui;
+            padding: 5px 10px;
+            width: 100%;
+            max-width: 210px;
+            line-height: 1em;
+            color: #fff;
+            &:extend(.tag all);
+            &:extend(.tag.-medium all);
+            &:extend(.absolute);
+            &:extend(.textCenter);
+
+            &.promoCoded {
+                background: @gold;
+
+                .txt {
+                    &:extend(.boldFont);
+                }
+            }
+
+            strong {
+                font-size: 1.2em;
+            }
+        }
+
+        &.notPromoCoded {
+            .opacity(0.8, 80);
+        }
+
+        .planHeader {
+            min-height: 160px;
+            color: @defaultBlue;
+            &:extend(.relative);
+
+            .planInfo {
+                min-height: 145px;
+                &:extend(.textCenter);
+
+                .planTitle {
+                    padding: 20px;
+                    color: #fff;
+                }
+
+                .studyPlanName {
+                    margin: 0 0 3px 0;
+                    &:extend(.boldFont);
+                }
+
+                .planName {
+                    margin-bottom: 25px;
+                    text-transform: uppercase;
+                    line-height: 1.3em;
+                    font-size: 1.3em;
+                    &:extend(.bolderFont);
+                }
+
+                &:hover {
+                    text-decoration: none;
+                }
+
+                .price {
+                    margin: 0 0 5px 0;
+                    font-size: 0.9em;
+                }
+
+                .offPrice {
+
+                    &.promoCoded {
+                        color: #d4c797;
+                        .animated;
+                        .fadeIn();
+                    }
+
+                    span.currency {
+                        font-size: 1.2em;
+                    }
+
+                    span.integer {
+                        margin: 0 -8px 0 0;
+                        letter-spacing: -2px;
+                        font-size: 3.2em;
+                        &:extend(.boldFont);
+                    }
+
+                    span.decimal {
+                        font-size: 1.2em;
+                    }
+
+                    span.monthly {
+                        font-size: 1.2em;
+                        &:extend(.boldFont);
+                    }
+                }
+
+                .fullPrice {
+                    margin: 5px 0 0 0;
+                    font-size: 0.9em;
+                }
+            }
+        }
+
+        .advantages {
+            padding: 10px 15px 0 15px;
+            text-align: left;
+            color: @defaultBlue;
+            &:extend(.boldFont);
+
+            li {
+                padding: 10px 0 0 30px;
+                line-height: 1.3em;
+                color: @defaultText;
+                &:extend(.relative);
+
+                &:last-child {
+                    padding-bottom: 15px;
+                }
+
+                &:before {
+                    top: 15px;
+                    left: 0;
+                    transform: rotate(-45deg);
+                    border: solid 2px #424242;
+                    border-top: none;
+                    border-right: none;
+                    width: 10px;
+                    height: 5px;
+                    content: '';
+                    &:extend(.absolute);
+                }
+
+                &[class^="reforco"] {
+                    .opacity(0.3,30);
+                    text-decoration: line-through;
+
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .recurring {
+            margin-top: 15px;
+            font-size: 0.9em;
+            &:extend(.bolderFont);
+            &:extend(.block);
+        }
+
+        .planFooter {
+            background: #fff;
+            padding: 10px 10px 5px 10px;
+            &:extend(.textCenter);
+
+            .cta {
+                &:extend(.btn all);
+                display: inline-block;
+                border-color: #FFF;
+                background: #f9f9f9;
+                padding: 10px 30px;
+                line-height: 1.2em;
+                color: #FFF;
+                font-family: @boldFont !important;
+                font-size: 1.1em;
+                .opacity(0.8, 80);
+
+                &.keepPlan {
+                    background: @defaultText !important;
+                }
+
+                &:hover {
+                    .opacity(1, 100);
+                    background: #FFF;
+                }
+            }
+
+            .escapeCta {
+                > a {
+                    margin-top: 10px;
+                    text-decoration: underline;
+                    display: block;
+                }
+            }
+        }
+
+        &.isTab {
+            width: 100%;
+            padding-bottom: 0;
+
+            .tabContainer {
+                margin-top: 0;
+            }
+
+            .tabContent {
+                min-height: 108px;
+            }
+            .description {
+                padding: 20px;
+
+                p {
+                    line-height: 1em;
+                    margin-top: 5px;
+                }
+
+                .advantages {
+
+                    label.title {
+                        font-size: 1.2em;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            .tab {
+                padding-bottom: 20px;
+
+                .price {
+                    margin: 0 0 5px 0;
+                    font-size: 0.9em;
+                }
+
+                .offPrice {
+
+                    &.promoCoded {
+                        color: #d4c797;
+                        .animated;
+                        .fadeIn();
+                    }
+
+                    span.currency {
+                        font-size: 1.2em;
+                    }
+
+                    span.integer {
+                        margin: 0 -8px 0 0;
+                        letter-spacing: -2px;
+                        font-size: 3.2em;
+                        &:extend(.boldFont);
+                    }
+
+                    span.decimal {
+                        font-size: 1.2em;
+                    }
+
+                    span.monthly {
+                        font-size: 1.2em;
+                        &:extend(.boldFont);
+                    }
+                }
+
+                .fullPrice {
+                    margin: 5px 0 0 0;
+                    font-size: 0.9em;
+                }
+
+                &.is-active {
+                    background-color: #F0F0F0;
+                }
+
+                .planFooter {
+                    background: none;
+                }
+            }
+        }
+
+        &.planoEnem {
+            border: 3px solid @qui;
+
+            .planHeader {
+                .borderRadius(0, 0, 0, 0);
+            }
+        }
+
+
+        &.planoEnem,
+        &.planoEnemMensal {
+
+            .planInfo, .tab, .title {
+                color: @red;
+            }
+
+            .planFooter {
+
+                .cta {
+                    margin-bottom: 6px;
+                    background-color: @red;
+                }
+
+                .escapeCta,
+                .escapeCta > a
+                .lead,
+                .lead > a{
+                    color: @red;
+                }
+
+                .signUp {
+                    margin-top: 10px;
+                    &:extend(.block);
+                }
+            }
+
+            .recurring {
+                color: @red;
+            }
+        }
+
+        &.reforcoMensal {
+
+            .planName {
+                padding: 0 25px;
+            }
+        }
+
+        &.reforcoMensal,
+        &.reforcoPacote {
+
+            .planInfo, .tab, .title {
+                color: @studyPlan;
+            }
+
+            .planFooter {
+
+                .cta {
+                    margin-bottom: 6px;
+                    background-color: @studyPlan;
+                }
+
+
+                .escapeCta,
+                .escapeCta > a,
+                .lead,
+                .lead > a{
+                    color: @studyPlan;
+                }
+
+                .signUp {
+                    margin-top: 10px;
+                    &:extend(.block);
+                }
+            }
+
+            .recurring {
+                color: @studyPlan;
+            }
+        }
+    }
+
+    .promoCodeWrapper {
+        margin: 0 auto;
+        padding: 40px 20px;
+        max-width: 1024px;
+        &:extend(.textCenter);
+
+        label.title {
+            &:extend(.block);
+            margin: 0 0 10px 0;
+            color: @defaultBlue;
+            font-size: 1.2em;
+            &:extend(.boldFont);
+        }
+
+        input[type=text] {
+            margin: 0 5px 0 0;
+            width: 250px;
+            color: @defaultBlue;
+            font-size: 1.1em;
+            &:extend(.boldFont);
+
+            &.error {
+                border-color: @silver !important;
+            }
+        }
+
+        .btn {
+            padding: 10px 20px;
+        }
+    }
+
+    .escapePage {
+        padding: 0 20px;
+        &:extend(.textCenter);
+
+        p {
+            margin: 0 0 10px 0;
+            line-height: 1.3em;
+            font-size: 1.1em;
+
+            a {
+                color: @defaultBlue;
+                &:extend(.boldFont);
+            }
+
+            &:last-child {
+                margin: 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1150px) {
+
+    .boxPlans {
+
+        .plansWrapper {
+            margin: 0;
+            max-width: 980px;
+        }
+
+        .plan {
+            margin: 0 auto;
+            width: 100%;
+            max-width: 400px;
+
+            &.reforcoMensal {
+
+                .planName {
+                    padding: 0 80px;
+                }
+            }
+        }
+
+    }
+
+}
+@media screen and (max-width: 769px) {
+
+    .boxPlans {
+
+        .plan {
+            margin: 0 auto;
+            width: 100%;
+
+            &.reforcoMensal {
+
+                .planName {
+                    padding: 0 25px;
+                }
+            }
+
+            .tabsNav {
+                .link {
+                    border-radius: 0;
+                    margin: 0;
+                    min-width: 0;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 479px) {
+
+
+    .promoCodeWrapper {
+
+        input[type=text] {
+            margin: 0 0 15px 0;
+            width: 100% !important;
+        }
+
+        .btn {
+            margin-top: 10px;
+            width: 100% !important;
+        }
+    }
+}
+
+@keyframes slidein {
+
+    from {
+        transform: translate3d(5px,0,0);
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+    }
+}
+@keyframes slideout {
+
+    from {
+        transform: translate3d(-5px,0,0);
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+    }
+}
+

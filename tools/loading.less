@@ -1,0 +1,99 @@
+@font-face {
+    font-family: 'loading';
+    src: url('@{pathFonts}/loading.eot');
+    src: url('@{pathFonts}/loading.eot?#iefix') format('embedded-opentype'),
+        url('@{pathFonts}/loading.svg#Locaweb-Icons') format('svg'),
+        url('@{pathFonts}/loading.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.loading {
+    &:before {
+        font-family: 'loading';
+        font-style:   normal;
+        font-weight:  normal;
+        font-variant: normal;
+        line-height:  1;
+        display: inline-block;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+.loading {
+    &.loadBase {&:before{content: "\e600";}}
+    &.loadMiddle {&:before{content: "\e601";}}
+    &.loadBrain {&:before{content: "\e602";}}
+}
+
+.keyframes(loadingFadeIn1, {
+   0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 0;
+    }
+
+    90% {
+        opacity: 1;
+    }
+});
+
+.keyframes(loadingFadeIn2, {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+});
+
+.keyframes(loadingFadeIn3, {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+});
+
+.loading {
+    margin: 20px auto;
+    text-align: center;
+
+    .inner {
+        height: 2px;
+
+        &:nth-of-type(1) {
+            .animation (loadingFadeIn1, 1.5s, linear, infinite);
+        }
+
+        &:nth-of-type(2) {
+            .animation (loadingFadeIn2, 1.5s, linear, infinite);
+        }
+
+        &:nth-of-type(3) {
+            .animation (loadingFadeIn3, 1.5s, linear, infinite);
+        }
+    }
+}
+
+/* material design loading */
+.mdl-spinner__layer-1,
+.mdl-spinner__layer-2,
+.mdl-spinner__layer-3,
+.mdl-spinner__layer-4 {
+    border-color: @lightBlue !important;
+}

@@ -1,0 +1,92 @@
+/* -----------------------------------------------------------------------------
+
+  CTA COMPONENT
+
+----------------------------------------------------------------------------- */
+
+/**
+ * Call to action
+ */
+
+.ctaWrapper {
+
+    .ctaContent {
+        margin: 0 auto;
+        padding: 15px 25px 55px;
+        max-width: 704px;
+        text-align: center;
+
+        > form {
+            margin: 0 10%;
+        }
+
+        .subtitle {
+            margin: 0 0 20px 0;
+            line-height: 1.3em;
+            letter-spacing: -0.5px;
+            font-size: 1.8em;
+            &:extend(.bolderFont);
+        }
+
+        #emailLead-js-error {
+            text-align: left;
+        }
+
+        .email {
+            margin-right: 25px;
+            width: 100%;
+        }
+
+        .pgraph {
+            margin-bottom: 35px;
+            font-size: 1.2em;
+        }
+
+        .cta {
+            font-size: 1.25em;
+            padding: 12px 70px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .ctaWrapper {
+
+        .ctaContent {
+            padding: 30px 0;
+
+            .pgraph {
+                margin-bottom: 20px;
+                font-size: 1.1em;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .ctaWrapper {
+
+        .grid {
+            padding: 0;
+        }
+
+        .ctaContent {
+
+            .subtitle {
+                font-size: 1.6em;
+            }
+
+            > form {
+                margin: 0;
+            }
+
+            .cta {
+                padding: 12px 40px;
+                width: 100%;
+                font-size: 1em;
+            }
+        }
+    }
+}
